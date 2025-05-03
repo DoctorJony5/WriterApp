@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Auto-detect light/dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+
+  :root {
+    --background: #242424;
+    --text: rgba(255, 255, 255, 0.87);
+    --primary: #646cff;
+    --hover: #747bff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+
+  :root {
+    --background: #ffffff;
+    --text: #213547;
+    --primary: #646cff;
+    --hover: #535bf2;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  @apply transition-colors duration-200;
+}
+
+a {
+  @apply text-[var(--primary)] hover:text-[var(--hover)];
+}
+
+button {
+  @apply transition-colors duration-200;
+}
